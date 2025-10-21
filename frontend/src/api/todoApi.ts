@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5080";
+// Use relative URLs by default so the frontend can be served from the same origin as the API.
+// If you still want to override at build time, set VITE_API_URL; otherwise leave empty for relative paths.
+const API_BASE = import.meta.env.VITE_API_URL ?? "";
 
 const client = axios.create({
   baseURL: API_BASE,

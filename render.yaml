@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: todo-app
+    env: node
+    plan: free
+    repo: <REPO_URL>
+    branch: main
+    buildCommand: "cd backend && npm ci && npm run build"
+    startCommand: "cd backend && npm start"
+    envVars:
+      - key: MONGO_URL
+        value: <YOUR_MONGO_CONNECTION_STRING>
